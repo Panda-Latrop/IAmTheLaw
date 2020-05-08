@@ -6,8 +6,14 @@ public class CourtController : MonoBehaviour
 {
     protected ResourcesSetting resources;
     protected GameSetting setting;
+
     [SerializeField]
-    protected CourtMenu menu;
+    protected MainMenuController menuController;
+    [SerializeField]
+    protected CourtMenu courtMenu;
+    [SerializeField]
+    protected ForceEndMenu forceEndMenu;
+
     [SerializeField]
     protected GameState state;
     [SerializeField]
@@ -28,10 +34,10 @@ public class CourtController : MonoBehaviour
     protected int currentSkill;
     protected int[] power = new int[2];
     [SerializeField]
-    protected float waitTime = 1f, waitTimeOnRefuse = 1f, newCaseWaitTime = 2f, endCaseWaitTime;
+    protected float waitTime = 1f, waitTimeOnRefuse = 1f, newCaseWaitTime = 2f, endCaseWaitTime, waitTimeToAction;
     protected float nextTime;
     [SerializeField]
-    protected int maxTurn = 6;
+    protected int maxTurn = 12, forceTurn = 6;
     protected int curTurn = 0;
     protected bool autoDoor;
 
@@ -74,7 +80,7 @@ public class CourtController : MonoBehaviour
                 case GameState.input:
                     enabled = false;
                     break;
-                case GameState.end:        
+                case GameState.end:
                     enabled = true;
                     doorView.Close();
                     nextTime = Time.time + newCaseWaitTime;
@@ -83,6 +89,10 @@ public class CourtController : MonoBehaviour
                 case GameState.wait:
                     enabled = true;
                     nextTime = Time.time + waitTime;
+                    break;
+                case GameState.waitAction:
+                    enabled = true;
+                    nextTime = Time.time + waitTimeToAction;
                     break;
                 case GameState.waitRefuse:
                     enabled = true;
@@ -102,7 +112,9 @@ public class CourtController : MonoBehaviour
         GetSkillsView(0).SetText(setting.Case.SkillsText, setting.Case.GetSkills(0), "left");
         GetSkillsView(1).SetText(setting.Case.SkillsText, setting.Case.GetSkills(0), "right");
         diceView.HideAllDice();
-        menu.HideButton();     
+
+        courtMenu.HideButton();
+
         GetSkillsView(0).SetDefaultColor();
         GetSkillsView(1).SetDefaultColor();
         power[0] = power[1] = 0;
@@ -124,7 +136,9 @@ public class CourtController : MonoBehaviour
         currentSkill = Random.Range(0, 6);
         diceView.SetDice((int)side, currentSkill);
         GetSkillsView((int)side).SetColorToLine(currentSkill, Color.white);
-        menu.ShowButton(side);
+
+        courtMenu.ShowButton(side);
+
         //sideViews[(int)side].ShowButtons(true);
         State = GameState.input;
     }
@@ -149,17 +163,21 @@ public class CourtController : MonoBehaviour
             }
             else
             {
-                result = (rand  > GetSkills((int)side)[currentSkill].Cost);
+                result = (rand > GetSkills((int)side)[currentSkill].Cost);
             }
-            
+
             GetSkillsView((int)side).SetColorToLine(currentSkill, result ? Color.black : Color.green);
             if (!result)
                 power[(int)side] += GetSkills((int)side)[currentSkill].Power;
         }
-        menu.HideButton();
+
+        courtMenu.HideButton();
+
         scoreView.SetScore(power[(int)side], (int)side);
         side = side == Side.side0 ? Side.side1 : Side.side0;
         curTurn++;
+
+
         if (curTurn >= maxTurn)
         {
             EndGame();
@@ -167,16 +185,39 @@ public class CourtController : MonoBehaviour
         }
         else
         {
-            // Дилог в раунд
-            //OnRoundEnd?.Invoke(curTurn);
-            if (_accept)
-                State = GameState.wait;
+            if (curTurn == forceTurn)
+            {
+                State = GameState.waitAction;
+                //menuController.ShowMenu(1);
+                //forceEndMenu.ShowDialog(power[0], power[1]);
+                return;
+            }
             else
-                State = GameState.waitRefuse;
+            {
+                if (_accept)
+                    State = GameState.wait;
+                else
+                    State = GameState.waitRefuse;
+            }
         }
-            
     }
 
+    public void ForceResume()
+    {
+        menuController.ShowMenu(0);
+        winView.Hide();
+        diceView.HideAllDice();
+        courtMenu.HideButton();
+        State = GameState.wait;
+    }
+    public void ForceEnd()
+    {
+        menuController.ShowMenu(0);
+        winView.Hide();
+        diceView.HideAllDice();
+        courtMenu.HideButton();
+        EndGame();
+    }
     public void EndGame()
     {
         State = GameState.endCase;
@@ -215,12 +256,12 @@ public class CourtController : MonoBehaviour
                     autoDoor = true;
                     State = GameState.startCase;
                 }
-                              
+
                 return;
             case GameState.startCaseWait:
                 if (Time.time >= nextTime)
                     SideTurn();
-                return;           
+                return;
             case GameState.endCaseWait:
                 if (Time.time >= nextTime)
                     State = GameState.end;
@@ -234,6 +275,15 @@ public class CourtController : MonoBehaviour
                         SceneLoader.Load(SceneLoader.RESULT);
                 }
                 return;
+
+            case GameState.waitAction:
+                if (Time.time >= nextTime)
+                {
+                    menuController.ShowMenu(1);
+                    forceEndMenu.ShowDialog(power[0], power[1]);
+                    state = GameState.input;
+                }
+                return;
             case GameState.waitRefuse:
             case GameState.wait:
                 if (Time.time >= nextTime)
@@ -245,7 +295,7 @@ public class CourtController : MonoBehaviour
     }
     protected void OnDestroy()
     {
-       // OnRoundEnd = null;
+        // OnRoundEnd = null;
     }
 }
 public enum GameState
@@ -258,6 +308,7 @@ public enum GameState
     endWait,
     wait,
     waitRefuse,
+    waitAction,
     input,
     end,
 

@@ -16,10 +16,14 @@ public class CourtMenu : MenuElement
     public override void Show()
     {
         base.Show();
+        view.ShowBack();
+
     }
     public override void Hide()
     {
         base.Hide();
+        view.Hide();
+        view.HideBack();
     }
     public void OnAccept(PointerEventData _eventData)
     {

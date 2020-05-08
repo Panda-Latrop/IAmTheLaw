@@ -7,6 +7,8 @@ public class CourtMenuView : MonoBehaviour
 {
     [SerializeField]
     protected Image accept0, accept1, refuse0, refuse1;
+    [SerializeField]
+    protected GameObject background;
 
     public void Hide()
     {
@@ -31,5 +33,13 @@ public class CourtMenuView : MonoBehaviour
             accept1.enabled = refuse1.enabled = true;
             accept1.raycastTarget = refuse1.raycastTarget = true;
         }
+    }
+    public void HideBack()
+    {
+        background.SetActive(false);
+    }
+    public void ShowBack()
+    {
+        background.SetActive(true);
     }
 }
