@@ -29,7 +29,7 @@ public class SelectDocumentMenuView : MonoBehaviour
             {
                 renderTexts[i].enabled = texts[i].enabled = images[i].enabled = images[i].raycastTarget = renderers[i].enabled = true;
                 number = _day.GetCase(i).Number;
-                texts[i].SetText("Дело " + number);
+                texts[i].SetText("Case " + number);
                 renderTexts[i].SetText(number);
                 transforms[i].localPosition = position + (-1 + i) * offset; ;
             }

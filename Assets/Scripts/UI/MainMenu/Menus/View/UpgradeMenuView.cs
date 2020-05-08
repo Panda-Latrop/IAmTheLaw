@@ -34,13 +34,13 @@ public class UpgradeMenuView : MonoBehaviour
             {
                 buy.raycastTarget = true;
                 buy.color = buyT.color = normal;
-                buyT.SetText("Купить\n" + _house.Cost.ToString());
+                buyT.SetText("Buy\n" + _house.Cost.ToString());
             }
             else
             {
                 buy.raycastTarget = false;
                 buy.color = buyT.color = cant;
-                buyT.SetText("Стоит\n" + _house.Cost.ToString());
+                buyT.SetText("Cost\n" + _house.Cost.ToString());
             }
         }
         else

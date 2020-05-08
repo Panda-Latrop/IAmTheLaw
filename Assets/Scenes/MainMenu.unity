@@ -701,7 +701,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u0430\u0447\u0430\u0442\u044C"
+  m_text: Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79a986380dbf49f4cbaf80690c702e3a, type: 2}
   m_sharedMaterial: {fileID: -7127748795875314520, guid: 79a986380dbf49f4cbaf80690c702e3a,
@@ -771,7 +771,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 232077827}
-    characterCount: 6
+    characterCount: 5
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -1179,7 +1179,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041A\u0443\u043F\u0438\u0442\u044C\n000000"
+  m_text: 'Buy
+
+    000000'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79a986380dbf49f4cbaf80690c702e3a, type: 2}
   m_sharedMaterial: {fileID: -7127748795875314520, guid: 79a986380dbf49f4cbaf80690c702e3a,
@@ -1249,7 +1251,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 3.759074, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 454618525}
-    characterCount: 13
+    characterCount: 10
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -2000,7 +2002,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u0440\u0435\u0434\u043C\u0435\u0442"
+  m_text: Room
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79a986380dbf49f4cbaf80690c702e3a, type: 2}
   m_sharedMaterial: {fileID: -7127748795875314520, guid: 79a986380dbf49f4cbaf80690c702e3a,
@@ -2070,7 +2072,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 739493723}
-    characterCount: 7
+    characterCount: 4
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -2698,7 +2700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041A\u0443\u043F\u0438\u0442\u044C"
+  m_text: Shop
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79a986380dbf49f4cbaf80690c702e3a, type: 2}
   m_sharedMaterial: {fileID: -7127748795875314520, guid: 79a986380dbf49f4cbaf80690c702e3a,
@@ -2768,7 +2770,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1125028544}
-    characterCount: 6
+    characterCount: 4
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -3295,7 +3297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u0440\u0435\u0434\u043C\u0435\u0442"
+  m_text: Stuff
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79a986380dbf49f4cbaf80690c702e3a, type: 2}
   m_sharedMaterial: {fileID: -7127748795875314520, guid: 79a986380dbf49f4cbaf80690c702e3a,
@@ -3365,7 +3367,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1350443526}
-    characterCount: 7
+    characterCount: 5
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -4453,7 +4455,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0423\u043B\u0443\u0447\u0448\u0438\u0442\u044C"
+  m_text: Upgrade
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79a986380dbf49f4cbaf80690c702e3a, type: 2}
   m_sharedMaterial: {fileID: -7127748795875314520, guid: 79a986380dbf49f4cbaf80690c702e3a,
@@ -4523,7 +4525,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1644806435}
-    characterCount: 8
+    characterCount: 7
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -4788,7 +4790,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u0430\u0437\u0430\u0434"
+  m_text: Back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79a986380dbf49f4cbaf80690c702e3a, type: 2}
   m_sharedMaterial: {fileID: -7127748795875314520, guid: 79a986380dbf49f4cbaf80690c702e3a,
@@ -4858,7 +4860,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1797009734}
-    characterCount: 5
+    characterCount: 4
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -5632,7 +5634,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041A\u0443\u043F\u0438\u0442\u044C\n000000"
+  m_text: 'Buy
+
+    000000'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79a986380dbf49f4cbaf80690c702e3a, type: 2}
   m_sharedMaterial: {fileID: -7127748795875314520, guid: 79a986380dbf49f4cbaf80690c702e3a,
@@ -5702,7 +5706,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 3.759074, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2003969474}
-    characterCount: 13
+    characterCount: 10
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -5788,7 +5792,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u0430\u0437\u0430\u0434"
+  m_text: Back
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79a986380dbf49f4cbaf80690c702e3a, type: 2}
   m_sharedMaterial: {fileID: -7127748795875314520, guid: 79a986380dbf49f4cbaf80690c702e3a,
@@ -5858,7 +5862,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 2005926359}
-    characterCount: 5
+    characterCount: 4
     spriteCount: 0
     spaceCount: 0
     wordCount: 1

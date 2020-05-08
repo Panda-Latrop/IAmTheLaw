@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Coach
   m_EditorClassIdentifier: 
   upgrades:
-  - name: "\u0414\u0438\u0432\u0430\u043D \u0411\u043E\u043C\u0436\u0430"
+  - name: Sofa Bad
     sprite: {fileID: -2151989937092700874, guid: 369a8082a74755d4b8a12bd813c1cf7a,
       type: 3}
     cost: 25
     heresy: 20
-  - name: "\u0414\u0438\u0432\u0430\u043D"
+  - name: Sofa
     sprite: {fileID: -2151989937092700874, guid: 369a8082a74755d4b8a12bd813c1cf7a,
       type: 3}
     cost: 100
     heresy: 50
-  - name: "\u0414\u0438\u0432\u0430\u043D \u0410\u0432\u0442\u043E\u0440\u0438\u0442\u0435\u0442\u0430"
+  - name: Sofa Nice
     sprite: {fileID: -2151989937092700874, guid: 369a8082a74755d4b8a12bd813c1cf7a,
       type: 3}
     cost: 500

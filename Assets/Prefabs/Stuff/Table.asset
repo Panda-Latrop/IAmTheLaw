@@ -13,17 +13,17 @@ MonoBehaviour:
   m_Name: Table
   m_EditorClassIdentifier: 
   upgrades:
-  - name: "\u0421\u0442\u043E\u043B \u0411\u043E\u043C\u0436\u0430"
+  - name: Table Bad
     sprite: {fileID: 5786862245142788840, guid: 369a8082a74755d4b8a12bd813c1cf7a,
       type: 3}
     cost: 10
     heresy: 5
-  - name: "\u0421\u0442\u043E\u043B"
+  - name: Table
     sprite: {fileID: 5786862245142788840, guid: 369a8082a74755d4b8a12bd813c1cf7a,
       type: 3}
     cost: 100
     heresy: 25
-  - name: "\u0421\u0442\u043E\u043B \u0410\u0432\u0442\u043E\u0440\u0438\u0442\u0435\u0442\u0430"
+  - name: Table Nice
     sprite: {fileID: 5786862245142788840, guid: 369a8082a74755d4b8a12bd813c1cf7a,
       type: 3}
     cost: 250

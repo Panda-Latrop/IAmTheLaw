@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<title type="Title Good">
-Все Хорошо
+All Good
 	</title>
 	<title type="Title Normal">
-Все Нормально
+All Normal
 	</title>
 	<title type="Title Bad">
-Все Ужасно
+All Bad
 	</title>
 	<text type="Main">
 Sample text Sample text Sample text Sample 

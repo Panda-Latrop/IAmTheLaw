@@ -3107,7 +3107,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041D\u043E\u0432\u043E\u0441\u0442\u0438"
+  m_text: News
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79a986380dbf49f4cbaf80690c702e3a, type: 2}
   m_sharedMaterial: {fileID: -7127748795875314520, guid: 79a986380dbf49f4cbaf80690c702e3a,
@@ -3143,7 +3143,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_textAlignment: 513
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -3174,10 +3174,10 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 4.270709, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1100387100}
-    characterCount: 7
+    characterCount: 4
     spriteCount: 0
     spaceCount: 0
     wordCount: 1
@@ -3732,7 +3732,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0412\u0442\u043E\u0440\u043E\u0435 \u0414\u0435\u043B\u043E"
+  m_text: Second Case
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79a986380dbf49f4cbaf80690c702e3a, type: 2}
   m_sharedMaterial: {fileID: -7127748795875314520, guid: 79a986380dbf49f4cbaf80690c702e3a,
@@ -5779,7 +5779,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u0435\u0440\u0432\u043E\u0435 \u0414\u0435\u043B\u043E"
+  m_text: Fist Case
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79a986380dbf49f4cbaf80690c702e3a, type: 2}
   m_sharedMaterial: {fileID: -7127748795875314520, guid: 79a986380dbf49f4cbaf80690c702e3a,
@@ -5825,7 +5825,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 7
+  m_firstOverflowCharacterIndex: 5
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -5849,7 +5849,7 @@ MonoBehaviour:
   m_margin: {x: 4.270709, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1863821271}
-    characterCount: 11
+    characterCount: 9
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -6142,7 +6142,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0422\u0440\u0435\u0442\u044C\u0435 \u0414\u0435\u043B\u043E"
+  m_text: Third Case
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79a986380dbf49f4cbaf80690c702e3a, type: 2}
   m_sharedMaterial: {fileID: -7127748795875314520, guid: 79a986380dbf49f4cbaf80690c702e3a,
@@ -6188,7 +6188,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 7
+  m_firstOverflowCharacterIndex: 6
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -6212,7 +6212,7 @@ MonoBehaviour:
   m_margin: {x: 4.270709, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1953540018}
-    characterCount: 11
+    characterCount: 10
     spriteCount: 0
     spaceCount: 1
     wordCount: 2

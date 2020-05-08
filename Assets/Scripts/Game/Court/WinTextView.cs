@@ -14,12 +14,12 @@ public class WinTextView : MonoBehaviour
         text.enabled = true;
         if (_toJail)
         {
-            text.SetText("За Решетку");
+            text.SetText("To Jail");
             text.color = toJail;
         }
         else
         {
-            text.SetText("На Волю");
+            text.SetText("To Freedom");
             text.color = toFreedom;
         }
     }

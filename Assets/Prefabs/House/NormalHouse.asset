@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f7978705c90384286541cc63804c45, type: 3}
   m_Name: NormalHouse
   m_EditorClassIdentifier: 
-  house: "\u041A\u0432\u0430\u0440\u0442\u0438\u0440\u043F \u0432 \u0446\u0435\u043D\u0442\u0440\u0435"
+  house: Room Nice
   sprite: {fileID: -941769597684628784, guid: 369a8082a74755d4b8a12bd813c1cf7a, type: 3}
   cost: 1000
   heresy: 500

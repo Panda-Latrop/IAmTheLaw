@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
 	<bribe posi ="выжить" nega ="умереть">
-		<msg>Этот еретик ничтожен, но шанс насолить империуму упускать нельзя. Он должен </msg>
-		<msg>. Мы думает </msg>
-		<msg>$ достаточна.</msg>
+		<msg>This heretic is insignificant, but the chance to annoy the imperium must not be missed. He must </msg>
+		<msg>. We think </msg>
+		<msg>$ is sufficient.</msg>
 	</bribe>
 	<case>
 		<number>01</number>		
 		<page>
-Еретик не помолился Богу Иператору перед сном, потому должен быть уничторжен.
+The heretic did not pray to God the Emperor before going to bed, therefore he must be destroyed.
 		</page>
 	</case>
 </root>

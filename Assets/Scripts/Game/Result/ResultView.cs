@@ -43,7 +43,7 @@ public class ResultView : MonoBehaviour
 {
     [SerializeField]
     protected ResultLineStruct[] lines;
-    protected string[] actions = { "Удачные Дела", "Неудачные Дела", "Взятки", "Прочее:", "Результат:" };
+    protected string[] actions = { "Successful Cases", "Unsuccessful Cases", "Bribes", "Other:", "Result:" };
 
     public void SetResult(ResultSruct _result)
     {

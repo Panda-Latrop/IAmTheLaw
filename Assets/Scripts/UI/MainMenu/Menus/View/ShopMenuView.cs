@@ -31,7 +31,7 @@ public class ShopMenuView : MonoBehaviour
             heresyPlusI.enabled = buy.raycastTarget = false;
             heresyPlus.text = " ";
             buy.color = buyT.color = sold;
-            buyT.SetText("Продано\n");
+            buyT.SetText("Sold\n");
         }
         else
         {
@@ -41,13 +41,13 @@ public class ShopMenuView : MonoBehaviour
             {
                 buy.raycastTarget = true;
                 buy.color = buyT.color = normal;
-                buyT.SetText("Купить\n" + _stuff.cost.ToString());
+                buyT.SetText("Buy\n" + _stuff.cost.ToString());
             }
             else
             {
                 buy.raycastTarget = false;
                 buy.color = buyT.color = cant;
-                buyT.SetText("Стоит\n" + _stuff.cost.ToString());
+                buyT.SetText("Cost\n" + _stuff.cost.ToString());
             }  
         }
         switch (_info)
@@ -73,7 +73,7 @@ public class ShopMenuView : MonoBehaviour
         heresyPlusI.enabled = buy.raycastTarget = false;
         heresyPlus.text = " ";
         buy.color = buyT.color = sold;
-        buyT.SetText("Продано\n");
+        buyT.SetText("Sold\n");
     }
     public void HideBack()
     {
