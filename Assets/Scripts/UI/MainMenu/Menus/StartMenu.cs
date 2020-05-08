@@ -7,7 +7,7 @@ public class StartMenu : MenuElement
 {
     protected ResourcesSetting resources;
     [SerializeField]
-    protected UIClickListenerSimple startB, upgradeB, shopB,cheat;
+    protected UIClickListenerSimple startB, upgradeB, shopB,cheat, cheat2, cheat3;
     [SerializeField]
     protected StartMenuView view;
     [SerializeField]
@@ -43,6 +43,16 @@ public class StartMenu : MenuElement
         resources.Money += 1000;
         view.SetResources(resources.Money, resources.Loyalty, resources.Heresy);
     }
+    protected void Cheat2(PointerEventData _eventData)
+    {
+        resources.Loyalty += 50;
+        view.SetResources(resources.Money, resources.Loyalty, resources.Heresy);
+    }
+    protected void Cheat3(PointerEventData _eventData)
+    {
+        resources.Heresy += 50;
+        view.SetResources(resources.Money, resources.Loyalty, resources.Heresy);
+    }
     public override void OnStart()
     {
         resources = ResourcesSetting.Instance;
@@ -50,5 +60,7 @@ public class StartMenu : MenuElement
         upgradeB.AddHandler(ToUpgrade);
         shopB.AddHandler(ToShop);
         cheat.AddHandler(Cheat);
+        cheat2.AddHandler(Cheat2);
+        cheat3.AddHandler(Cheat3);
     }
 }

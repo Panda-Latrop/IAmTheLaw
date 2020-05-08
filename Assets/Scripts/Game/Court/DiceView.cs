@@ -45,6 +45,6 @@ public class DiceView : MonoBehaviour
     {
         heresyPlus.enabled = true;
         heresy.enabled = true;
-        heresyPlus.SetText("+" + _add);
+        heresyPlus.SetText("+" + _add +"\nСилы");
     }
 }
