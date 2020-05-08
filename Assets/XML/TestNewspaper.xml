@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<title type="Title Good">
+Все Хорошо
+	</title>
+	<title type="Title Normal">
+Все Нормально
+	</title>
+	<title type="Title Bad">
+Все Ужасно
+	</title>
+	<text type="Main">
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+	</text>
+	<text type="Hint">
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+Sample text Sample text Sample text Sample 
+	</text>
+	<text type="Sub1">
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+	</text>
+	<text type="Sub2">
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+Sample text Sample text Sample text Sample 
+text Sample text Sample text Sample text
+	</text>
+</root>

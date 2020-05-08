@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 282cb4262794b51479e4931f70d5277b, type: 3}
+  m_Name: Chair
+  m_EditorClassIdentifier: 
+  upgrades:
+  - name: "C\u0442\u0443\u043B \u0411\u043E\u043C\u0436\u0430"
+    sprite: {fileID: 6761973696573791442, guid: 369a8082a74755d4b8a12bd813c1cf7a,
+      type: 3}
+    cost: 10
+    heresy: 10
+  - name: "C\u0442\u0443\u043B"
+    sprite: {fileID: 6761973696573791442, guid: 369a8082a74755d4b8a12bd813c1cf7a,
+      type: 3}
+    cost: 50
+    heresy: 25
+  - name: "\u0421\u0442\u0443\u043B \u0410\u0432\u0442\u043E\u0440\u0438\u0442\u0435\u0442\u0430"
+    sprite: {fileID: 6761973696573791442, guid: 369a8082a74755d4b8a12bd813c1cf7a,
+      type: 3}
+    cost: 200
+    heresy: 100

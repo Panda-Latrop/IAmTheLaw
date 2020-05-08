@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<side side = "left">
+		<skill>Good skill 1</skill>
+		<skill>Good skill 2</skill>
+		<skill>Good skill 3</skill>
+		<skill>Good skill 4</skill>
+		<skill>Good skill 5</skill>
+		<skill>Good skill 6</skill>
+		<skill>Good skill 7</skill>
+	</side>
+	<side side = "right">
+		<skill>Bad skill 1</skill>
+		<skill>Bad skill 2</skill>
+		<skill>Bad skill 3</skill>
+		<skill>Bad skill 4</skill>
+		<skill>Bad skill 5</skill>
+		<skill>Bad skill 6</skill>
+		<skill>Bad skill 7</skill>
+	</side>
+</root>

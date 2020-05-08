@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae4a86b80c9e7b48a0f94e9891c37b2, type: 3}
+  m_Name: "TestCase \u2014 \u043A\u043E\u043F\u0438\u044F (2)"
+  m_EditorClassIdentifier: 
+  toJail: 0
+  bribeIsAllow: 1
+  bribe:
+    size: 300
+    heresy: 10
+    toJail: 1
+  documentText: {fileID: 4900000, guid: c1c3a4afaf6d8654b8267f58fd274804, type: 3}
+  skillsText: {fileID: 4900000, guid: 4463d28439b0078449e2bfa3bc68bcca, type: 3}
+  dialogText: {fileID: 4900000, guid: 023d1e1995f9c394db7673789928d3ed, type: 3}
+  result:
+    winMoney: 100
+    winLoyalty: 50
+    winHeresy: -100
+    loseMoney: -100
+    loseLoyalty: -100
+    loseHeresy: 50
+  leftSide:
+  - power: 1
+    cost: 1
+  - power: 2
+    cost: 2
+  - power: 3
+    cost: 3
+  - power: 4
+    cost: 4
+  - power: 5
+    cost: 5
+  - power: 6
+    cost: 6
+  rightSide:
+  - power: 1
+    cost: 1
+  - power: 2
+    cost: 2
+  - power: 3
+    cost: 3
+  - power: 4
+    cost: 4
+  - power: 5
+    cost: 5
+  - power: 6
+    cost: 6

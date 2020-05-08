@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<root>
+	<branch round = "2">
+		<opponent opponent = "left" delay = "2.0">Пошёл ты жалкий хаосит, я тебя уничтожу!</opponent>
+		<opponent opponent = "right" delay = "2.0">Это ты меня?! Да это я тебя...</opponent>
+		<opponent opponent = "right" delay = "2.0">Ээээ...</opponent>
+		<opponent opponent = "right" delay = "2.0">Уничтожу!</opponent>
+		<opponent opponent = "left" delay = "2.0">Ааа пофиг.</opponent>
+		<stop opponent = "stop" delay = "2.0">Тихо.</stop>
+	</branch>
+	<branch round = "4">
+		<opponent opponent = "left" delay = "2.0">Пошёл ты жалкий хаосит, я тебя уничтожу!</opponent>
+		<opponent opponent = "right" delay = "2.0">Это ты меня?! Да это я тебя...</opponent>
+		<opponent opponent = "right" delay = "2.0">Ээээ...</opponent>
+		<opponent opponent = "right" delay = "2.0">Уничтожу!</opponent>
+		<opponent opponent = "left" delay = "2.0">Ааа пофиг.</opponent>
+		<stop opponent = "stop" delay = "2.0">Тихо.</stop>
+	</branch>
+</root>
