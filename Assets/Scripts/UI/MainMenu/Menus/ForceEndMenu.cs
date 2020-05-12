@@ -11,7 +11,7 @@ public class ForceEndMenu : MenuElement
     [SerializeField]
     protected ForceEndMenuView view;
     [SerializeField]
-    protected CourtController courtController;
+    protected CourtControllerV2 courtController;
 
     public override void Show()
     {
@@ -31,11 +31,11 @@ public class ForceEndMenu : MenuElement
     }
     public void OnAccept(PointerEventData _eventData)
     {
-        courtController.ForceEnd();
+        courtController.ForceAction(true);
     }
     public void OnRefuse(PointerEventData _eventData)
     {
-        courtController.ForceResume();
+        courtController.ForceAction(false);
     }
     public override void OnStart()
     {

@@ -137,7 +137,7 @@ public class CourtController : MonoBehaviour
         diceView.SetDice((int)side, currentSkill);
         GetSkillsView((int)side).SetColorToLine(currentSkill, Color.white);
 
-        courtMenu.ShowButton(side);
+        courtMenu.ShowButton();
 
         //sideViews[(int)side].ShowButtons(true);
         State = GameState.input;

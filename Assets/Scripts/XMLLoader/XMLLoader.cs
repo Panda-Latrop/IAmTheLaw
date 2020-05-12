@@ -119,68 +119,116 @@ public class XMLLoader
 
         }
     }
-    public static void LoadDialog(TextAsset _xmlFile,ref List<DialogBranch> _dialog)
+    public static void LoadDialog(TextAsset _xmlFile,ref DialogRoot _dialog)
     {
+        _dialog = new DialogRoot();
         XmlDocument xmlDoc = new XmlDocument();
         xmlDoc.LoadXml(_xmlFile.text);
-        XmlNodeList branches = xmlDoc.DocumentElement.SelectNodes("branch");
-        _dialog = new List<DialogBranch>();
-        for (int i = 0; i < branches.Count; i++)
-        {
-            XmlNodeList nodes = branches[i].SelectNodes("opponent");
-            DialogBranch branch = new DialogBranch();
-            branch.round = int.Parse(branches[i].Attributes["round"].Value);
-            _dialog.Add(branch);      
-            _dialog[i].nodes = new List<DialogNode>();
-            for (int j  = 0; j < nodes.Count; j++)
-            {
-                DialogNode node = new DialogNode();
-                node.text = nodes[j].InnerText;
-                if (nodes[j].Attributes["delay"] != null)
-                    node.delay = Convert.ToSingle(nodes[j].Attributes["delay"].Value, System.Globalization.CultureInfo.InvariantCulture);
-                else
-                    node.delay = 1.0f;
-                if (nodes[j].Attributes["opponent"].Value.Equals("left"))
-                    node.side = 0;
-                if (nodes[j].Attributes["opponent"].Value.Equals("right"))
-                    node.side = 1;
-                _dialog[i].nodes.Add(node);
-            }
+        XmlNodeList sides = xmlDoc.DocumentElement.SelectNodes("side");
+        _dialog.sides = new List<DialogSkills>();
 
-            XmlNode xmlN = branches[i].SelectSingleNode("stop");
-            if(xmlDoc != null)
+        for (int i = 0; i < sides.Count; i++)
+        {           
+            DialogSkills skills = new DialogSkills();
+            skills.skills = new List<DialogSkill>();
+            _dialog.sides.Add(skills);
+
+
+
+
+            
+            XmlNodeList skillList = sides[i].SelectNodes("skill");
+            for (int j  = 0; j < skillList.Count; j++)
             {
-                DialogNode node = new DialogNode();
-                node.text = xmlN.InnerText;
-                if (xmlN.Attributes["delay"] != null)
-                    node.delay = Convert.ToSingle(xmlN.Attributes["delay"].Value, System.Globalization.CultureInfo.InvariantCulture);
-                else
-                    node.delay = 1.0f;
-                if (xmlN.Attributes["opponent"].Value.Equals("stop"))
-                    node.side = 2;
-                _dialog[i].stopNode = node;
+                DialogSkill skill = new DialogSkill();
+                skill.dialogs = new List<DialogNode>();
+                skill.actions = new List<DialogNode>();
+                _dialog.sides[i].skills.Add(skill);
+              XmlNodeList nodes = skillList[j].SelectNodes("dialog");
+                for (int k = 0; k < nodes.Count; k++)
+                {
+                    DialogNode node = new DialogNode();
+                    node.text = nodes[k].InnerText;
+                    if (nodes[k].Attributes["delay"] != null)
+                        node.delay = Convert.ToSingle(nodes[k].Attributes["delay"].Value, System.Globalization.CultureInfo.InvariantCulture);
+                    else
+                        node.delay = 1.0f;
+                    if (nodes[k].Attributes["opponent"].Value.Equals("left"))
+                        node.side = 0;
+                    if (nodes[k].Attributes["opponent"].Value.Equals("right"))
+                        node.side = 1;
+                    if (nodes[k].Attributes["opponent"].Value.Equals("main"))
+                        node.side = 2;
+                    skill.dialogs.Add(node);
+                }
+                XmlNode action = skillList[j].SelectSingleNode("action");
+                {
+                    XmlNode nodeXml = action.SelectSingleNode("accept");
+                    DialogNode node = new DialogNode();
+                    node.text = nodeXml.InnerText;
+                    if (nodeXml.Attributes["delay"] != null)
+                        node.delay = Convert.ToSingle(nodeXml.Attributes["delay"].Value, System.Globalization.CultureInfo.InvariantCulture);
+                    else
+                        node.delay = 1.0f;
+                    if (nodeXml.Attributes["opponent"].Value.Equals("left"))
+                        node.side = 0;
+                    if (nodeXml.Attributes["opponent"].Value.Equals("right"))
+                        node.side = 1;
+                    if (nodeXml.Attributes["opponent"].Value.Equals("main"))
+                        node.side = 2;
+                    skill.actions.Add(node);
+                }
+                {
+                    XmlNode nodeXml = action.SelectSingleNode("refuse");
+                    DialogNode node = new DialogNode();
+                    node.text = nodeXml.InnerText;
+                    if (nodeXml.Attributes["delay"] != null)
+                        node.delay = Convert.ToSingle(nodeXml.Attributes["delay"].Value, System.Globalization.CultureInfo.InvariantCulture);
+                    else
+                        node.delay = 1.0f;
+                    if (nodeXml.Attributes["opponent"].Value.Equals("left"))
+                        node.side = 0;
+                    if (nodeXml.Attributes["opponent"].Value.Equals("right"))
+                        node.side = 1;
+                    if (nodeXml.Attributes["opponent"].Value.Equals("main"))
+                        node.side = 2;
+                    skill.actions.Add(node);
+                }
+                {
+                    XmlNode nodeXml = action.SelectSingleNode("refuse-succses");
+                    DialogNode node = new DialogNode();
+                    node.text = nodeXml.InnerText;
+                    if (nodeXml.Attributes["delay"] != null)
+                        node.delay = Convert.ToSingle(nodeXml.Attributes["delay"].Value, System.Globalization.CultureInfo.InvariantCulture);
+                    else
+                        node.delay = 1.0f;
+                    if (nodeXml.Attributes["opponent"].Value.Equals("left"))
+                        node.side = 0;
+                    if (nodeXml.Attributes["opponent"].Value.Equals("right"))
+                        node.side = 1;
+                    if (nodeXml.Attributes["opponent"].Value.Equals("main"))
+                        node.side = 2;
+                    skill.actions.Add(node);
+                }
+                {
+                    XmlNode nodeXml = action.SelectSingleNode("refuse-failed");
+                    DialogNode node = new DialogNode();
+                    node.text = nodeXml.InnerText;
+                    if (nodeXml.Attributes["delay"] != null)
+                        node.delay = Convert.ToSingle(nodeXml.Attributes["delay"].Value, System.Globalization.CultureInfo.InvariantCulture);
+                    else
+                        node.delay = 1.0f;
+                    if (nodeXml.Attributes["opponent"].Value.Equals("left"))
+                        node.side = 0;
+                    if (nodeXml.Attributes["opponent"].Value.Equals("right"))
+                        node.side = 1;
+                    if (nodeXml.Attributes["opponent"].Value.Equals("main"))
+                        node.side = 2;
+
+                    skill.actions.Add(node);
+                }
             }
         }
-    }
-    public static void LoadDialog(TextAsset _xmlFile,ref List<XmlNodeList> _dialog)
-    {
-        XmlDocument xmlDoc = new XmlDocument();
-        xmlDoc.LoadXml(_xmlFile.text);
-        
-        XmlNodeList branches = xmlDoc.DocumentElement.SelectNodes("branch");
-        _dialog = new List<XmlNodeList>(branches.Count);
-        for (int i = 0; i < branches.Count; i++)
-        {
-            _dialog.Add(branches[i].SelectNodes("opponent"));
-        }
-    }
-    public static int GetDialogNodeInfo(XmlNode _node, ref string _text, ref float delay)
-    {
-        _text = _node.InnerText;
-        if (_node.Attributes["delay"] != null)
-            delay = Convert.ToSingle(_node.Attributes["delay"].Value, System.Globalization.CultureInfo.InvariantCulture);
-           //delay = float.Parse(,System.Globalization.NumberStyles.Float);   
-        return _node.Attributes["opponent"].Value.Equals("left") ? 0 : 1;
     }
 
     public static string[] LoadNewspaper(TextAsset _xmlFile, int _info)
@@ -195,5 +243,21 @@ public class XMLLoader
         }
         strs[0] = xmlDoc.DocumentElement.SelectNodes("title")[_info].InnerText;
         return strs;
+    }
+
+    public static void LoadLawbook(TextAsset _xmlFile,ref List<LawbookArticle> _lawbook)
+    {
+        XmlDocument xmlDoc = new XmlDocument();
+        xmlDoc.LoadXml(_xmlFile.text);
+        XmlNodeList articles = xmlDoc.DocumentElement.SelectNodes("article");
+        _lawbook = new List<LawbookArticle>();
+        for (int i = 0; i < articles.Count; i++)
+        {
+            LawbookArticle article = new LawbookArticle();
+            article.name = articles[i].SelectSingleNode("name").InnerText;
+            article.title = articles[i].SelectSingleNode("long_name").InnerText;
+            article.text = articles[i].SelectSingleNode("text").InnerText;
+            _lawbook.Add(article);
+        }
     }
 }

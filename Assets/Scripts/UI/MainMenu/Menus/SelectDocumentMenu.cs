@@ -9,13 +9,13 @@ public class SelectDocumentMenu : MenuElement
     [SerializeField]
     protected UIClickListenerArg case0, case1, case2;
     [SerializeField]
-    protected UIClickListenerSimple toGame,toNews;
+    protected UIClickListenerSimple toGame,toNews, toLaws;
     [SerializeField]
     protected DocumentMenu documentMenu;
     [SerializeField]
     protected SelectDocumentMenuView view;
     [SerializeField]
-    protected int show,news;
+    protected int show,news,laws;
 
     public override void Show()
     {
@@ -44,6 +44,10 @@ public class SelectDocumentMenu : MenuElement
     {      
         controller.ShowMenu(news);
     }
+    protected void ToLaws(PointerEventData _eventData)
+    {
+        controller.ShowMenu(laws);
+    }
     public override void OnStart()
     {
         setting = GameSetting.Instance;
@@ -52,6 +56,7 @@ public class SelectDocumentMenu : MenuElement
         case1.AddHandler(ToShow);
         case2.AddHandler(ToShow);
         toNews.AddHandler(ToNews);
+        toLaws.AddHandler(ToLaws);
         view.Show(setting.Day);
     }
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c74c644d83080a49b15d235da3d2bc3, type: 3}
   m_Name: Day0
   m_EditorClassIdentifier: 
+  lawbook: {fileID: 4900000, guid: 751e0e80ce74aea40be8603fae0b6fd0, type: 3}
   newspaperText: {fileID: 4900000, guid: 2f58bdaab22e41e4c83a278762f607ed, type: 3}
   cases:
   - {fileID: 11400000, guid: 14673603b323ebc4bacb0586bccc7e39, type: 2}

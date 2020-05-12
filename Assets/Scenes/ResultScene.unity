@@ -431,7 +431,7 @@ Transform:
   m_GameObject: {fileID: 98689580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 2, y: 2.4, z: 1}
   m_Children: []
   m_Father: {fileID: 1686249915}
   m_RootOrder: 0
@@ -2959,7 +2959,7 @@ Camera:
   far clip plane: 20
   field of view: 60
   orthographic: 1
-  orthographic size: 2.5
+  orthographic size: 2.75
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4758,6 +4758,109 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1193033716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1193033720}
+  - component: {fileID: 1193033719}
+  - component: {fileID: 1193033718}
+  - component: {fileID: 1193033717}
+  m_Layer: 0
+  m_Name: NotDestroyManagers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1193033717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193033716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f60d7f7cd391f2479e001668123901b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 1
+--- !u!114 &1193033718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193033716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087df284a3aeb944ea4a5c30e58e2f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 100
+  loyalty: 0
+  heresy: 0
+  houses:
+  - {fileID: 11400000, guid: 1aa00e2d2e46ca846bd05cb5cf86f1ad, type: 2}
+  - {fileID: 11400000, guid: 65bff07513aa02b4ab023c4afba96517, type: 2}
+  - {fileID: 11400000, guid: fa73a890a1ede87428f60487739126d1, type: 2}
+  houseInfo: 0
+  stuffs:
+  - {fileID: 11400000, guid: 4bf696f400b35df44bd0a3cab879fafc, type: 2}
+  - {fileID: 11400000, guid: 942ed5f7d7637f744b9da8f91c0f4978, type: 2}
+  - {fileID: 11400000, guid: 4a7cc9f6e928a9b41bdeb6d6261be8f0, type: 2}
+  stuffInfos:
+  - level: 0
+    sold: 0
+  - level: 0
+    sold: 0
+  - level: 0
+    sold: 0
+--- !u!114 &1193033719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193033716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6769a2d7d6a04c4db0a0768d2307847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day: {fileID: 11400000, guid: 5cef3bc8df33bdc439da8b8706d4c7f8, type: 2}
+  cases:
+  - bribeAccepted: 0
+    toJail: 0
+    failLoyalty: 0
+    failHeresy: 0
+  - bribeAccepted: 0
+    toJail: 0
+    failLoyalty: 0
+    failHeresy: 0
+  - bribeAccepted: 0
+    toJail: 0
+    failLoyalty: 0
+    failHeresy: 0
+--- !u!4 &1193033720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193033716}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1219993791
 GameObject:
   m_ObjectHideFlags: 0
@@ -5205,83 +5308,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1416394904
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1416394907}
-  - component: {fileID: 1416394906}
-  - component: {fileID: 1416394905}
-  m_Layer: 0
-  m_Name: NotDestroyManagers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1416394905
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416394904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 087df284a3aeb944ea4a5c30e58e2f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  money: 99999
-  loyalty: 0
-  heresy: 5
-  houses:
-  - {fileID: 11400000, guid: 1aa00e2d2e46ca846bd05cb5cf86f1ad, type: 2}
-  - {fileID: 11400000, guid: 65bff07513aa02b4ab023c4afba96517, type: 2}
-  - {fileID: 11400000, guid: fa73a890a1ede87428f60487739126d1, type: 2}
-  houseInfo: 0
-  stuffs:
-  - {fileID: 11400000, guid: 4bf696f400b35df44bd0a3cab879fafc, type: 2}
-  - {fileID: 11400000, guid: 942ed5f7d7637f744b9da8f91c0f4978, type: 2}
-  - {fileID: 11400000, guid: 4a7cc9f6e928a9b41bdeb6d6261be8f0, type: 2}
-  stuffInfos: []
---- !u!114 &1416394906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416394904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6769a2d7d6a04c4db0a0768d2307847, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  day: {fileID: 11400000, guid: 5cef3bc8df33bdc439da8b8706d4c7f8, type: 2}
-  cases:
-  - bribeAccepted: 1
-    toJail: 1
-  - bribeAccepted: 1
-    toJail: 0
-  - bribeAccepted: 0
-    toJail: 1
---- !u!4 &1416394907
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416394904}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1601136541
 GameObject:
   m_ObjectHideFlags: 0

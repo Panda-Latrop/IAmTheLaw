@@ -6,33 +6,21 @@ using UnityEngine.UI;
 public class CourtMenuView : MonoBehaviour
 {
     [SerializeField]
-    protected Image accept0, accept1, refuse0, refuse1;
+    protected Image accept, refuse;
     [SerializeField]
     protected GameObject background;
 
     public void Hide()
     {
-        accept0.enabled = accept1.enabled = refuse0.enabled = refuse1.enabled = false;
-        accept0.raycastTarget = accept1.raycastTarget = refuse0.raycastTarget = refuse1.raycastTarget = false;
+        accept.enabled = refuse.enabled = false;
+        accept.raycastTarget = refuse.raycastTarget = false;
         
     }
 
-    public void Show(Side _side)
+    public void Show()
     {
-        if (_side == Side.side0)
-        {       
-            accept0.enabled = refuse0.enabled = true;
-            accept0.raycastTarget = refuse0.raycastTarget = true;
-            accept1.enabled = refuse1.enabled = false;
-            accept1.raycastTarget = refuse1.raycastTarget = false;
-        }
-        else
-        {
-            accept0.enabled = refuse0.enabled = false;
-            accept0.raycastTarget = refuse0.raycastTarget = false;
-            accept1.enabled = refuse1.enabled = true;
-            accept1.raycastTarget = refuse1.raycastTarget = true;
-        }
+        accept.enabled = refuse.enabled = true;
+        accept.raycastTarget = refuse.raycastTarget = true;
     }
     public void HideBack()
     {

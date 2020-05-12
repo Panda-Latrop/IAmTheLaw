@@ -45,24 +45,42 @@ public class ResultController : MonoBehaviour
             if (bride)
             {
                 result.brideTime++;
-                result.brideMoney += resources.Heresy > 0 ? resources.Heresy * 100 : 100;
+                result.brideMoney += resources.Heresy > 0 ? resources.Heresy * 100 : Global.STANDARD_BRIBE;
                 result.brideLoyalty += 0;
                 result.brideHeresy += setting.Day.GetCase(i).Bribe.heresy;
             }       
+            if(setting.GetGameCase(i).FailLoyalty != 0 || setting.GetGameCase(i).FailHeresy != 0)
+            {
+                result.failTime++;
+                result.failLoyalty += setting.GetGameCase(i).FailLoyalty;
+                result.failHeresy += setting.GetGameCase(i).FailHeresy;
+            }
 
         }
         result.totalMoney = result.winMoney + result.loseMoney + result.brideMoney;
-        result.totalLoyalty = result.winLoyalty + result.loseLoyalty + result.brideLoyalty;
-        result.totalHeresy = result.winHeresy + result.loseHeresy + result.brideHeresy;
+        result.totalLoyalty = result.winLoyalty + result.loseLoyalty + result.brideLoyalty + result.failLoyalty;
+        result.totalHeresy = result.winHeresy + result.loseHeresy + result.brideHeresy + result.failHeresy;
         resources.Money += result.totalMoney;
         resources.Loyalty += result.totalLoyalty;
         resources.Heresy += result.totalHeresy;
+        result.totalMoney = resources.Money;
+        result.totalLoyalty = resources.Loyalty;
+        result.totalHeresy = resources.Heresy;
         setting.RestartDay();/////////////////////////////////////////////////////////////
         resultView.SetResult(result);
     }
 
     public void ToMainMenu(PointerEventData _eventData)
     {
-        SceneLoader.Load(SceneLoader.MAIN_MENU);
+        if (resources.Money < Global.GAME_OVER_MONEY || resources.Loyalty <= Global.GAME_OVER_LOYALTY || resources.Heresy <= Global.GAME_OVER_HERESY)
+        {
+            LoadSceneSetting.Instance.state = LoadSceneState.delete;
+            SceneLoader.Load(SceneLoader.GAME_OVER);
+        }        
+        else
+        {
+            SceneLoader.Load(SceneLoader.HOME);
+        }
+
     }
 }

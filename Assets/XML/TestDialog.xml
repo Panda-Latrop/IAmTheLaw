@@ -1,19 +1,127 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <root>
-	<branch round = "2">
-		<opponent opponent = "left" delay = "2.0">Пошёл ты жалкий хаосит, я тебя уничтожу!</opponent>
-		<opponent opponent = "right" delay = "2.0">Это ты меня?! Да это я тебя...</opponent>
-		<opponent opponent = "right" delay = "2.0">Ээээ...</opponent>
-		<opponent opponent = "right" delay = "2.0">Уничтожу!</opponent>
-		<opponent opponent = "left" delay = "2.0">Ааа пофиг.</opponent>
-		<stop opponent = "stop" delay = "2.0">Тихо.</stop>
-	</branch>
-	<branch round = "4">
-		<opponent opponent = "left" delay = "2.0">Пошёл ты жалкий хаосит, я тебя уничтожу!</opponent>
-		<opponent opponent = "right" delay = "2.0">Это ты меня?! Да это я тебя...</opponent>
-		<opponent opponent = "right" delay = "2.0">Ээээ...</opponent>
-		<opponent opponent = "right" delay = "2.0">Уничтожу!</opponent>
-		<opponent opponent = "left" delay = "2.0">Ааа пофиг.</opponent>
-		<stop opponent = "stop" delay = "2.0">Тихо.</stop>
-	</branch>
+	<side> <!-- left-->
+		<skill> <!-- skill 1-->
+			<dialog opponent = "left" delay = "4.0">Доказательство 1!</dialog>
+			<dialog opponent = "right" delay = "4.0">Невозможно!</dialog>	
+			<action>
+				<accept opponent = "main" delay = "4.0">Согласен.</accept>
+				<refuse opponent = "main" delay = "4.0">Не дотягивает.</refuse>			
+				<refuse-succses opponent = "left" delay = "4.0">С вами не поспориш...</refuse-succses>
+				<refuse-failed opponent = "left" delay = "4.0">Вы с ума сошли?</refuse-failed>
+			</action>			
+		</skill>
+		<skill> <!-- skill 2-->
+			<dialog opponent = "left" delay = "4.0">Доказательство 2!</dialog>
+			<dialog opponent = "right" delay = "4.0">Невозможно!</dialog>	
+			<action>
+				<accept opponent = "main" delay = "4.0">Согласен.</accept>
+				<refuse opponent = "main" delay = "4.0">Не дотягивает.</refuse>			
+				<refuse-succses opponent = "left" delay = "4.0">С вами не поспориш...</refuse-succses>
+				<refuse-failed opponent = "left" delay = "4.0">Вы с ума сошли?</refuse-failed>
+			</action>			
+		</skill>
+		<skill> <!-- skill 3-->
+			<dialog opponent = "left" delay = "4.0">Доказательство 3!</dialog>
+			<dialog opponent = "right" delay = "4.0">Невозможно!</dialog>	
+			<action>
+				<accept opponent = "main" delay = "4.0">Согласен.</accept>
+				<refuse opponent = "main" delay = "4.0">Не дотягивает.</refuse>			
+				<refuse-succses opponent = "left" delay = "4.0">С вами не поспориш...</refuse-succses>
+				<refuse-failed opponent = "left" delay = "4.0">Вы с ума сошли?</refuse-failed>
+			</action>			
+		</skill>
+		<skill> <!-- skill 4-->
+			<dialog opponent = "left" delay = "4.0">Доказательство 4!</dialog>
+			<dialog opponent = "right" delay = "4.0">Невозможно!</dialog>	
+			<action>
+				<accept opponent = "main" delay = "4.0">Согласен.</accept>
+				<refuse opponent = "main" delay = "4.0">Не дотягивает.</refuse>			
+				<refuse-succses opponent = "left" delay = "4.0">С вами не поспориш...</refuse-succses>
+				<refuse-failed opponent = "left" delay = "4.0">Вы с ума сошли?</refuse-failed>
+			</action>			
+		</skill>
+		<skill> <!-- skill 5-->
+			<dialog opponent = "left" delay = "4.0">Доказательство 5!</dialog>
+			<dialog opponent = "right" delay = "4.0">Невозможно!</dialog>	
+			<action>
+				<accept opponent = "main" delay = "4.0">Согласен.</accept>
+				<refuse opponent = "main" delay = "4.0">Не дотягивает.</refuse>			
+				<refuse-succses opponent = "left" delay = "4.0">С вами не поспориш...</refuse-succses>
+				<refuse-failed opponent = "left" delay = "4.0">Вы с ума сошли?</refuse-failed>
+			</action>			
+		</skill>
+		<skill> <!-- skill 6-->
+			<dialog opponent = "left" delay = "4.0">Доказательство 6!</dialog>
+			<dialog opponent = "right" delay = "4.0">Невозможно!</dialog>	
+			<action>
+				<accept opponent = "main" delay = "4.0">Согласен.</accept>
+				<refuse opponent = "main" delay = "4.0">Не дотягивает.</refuse>			
+				<refuse-succses opponent = "left" delay = "4.0">С вами не поспориш...</refuse-succses>
+				<refuse-failed opponent = "left" delay = "4.0">Вы с ума сошли?</refuse-failed>
+			</action>			
+		</skill>
+	</side>
+	<side> <!-- right-->
+		<skill> <!-- skill 1-->
+			<dialog opponent = "right" delay = "4.0">Доказательство 1!</dialog>
+			<dialog opponent = "left" delay = "4.0">Невозможно!</dialog>	
+			<action>
+				<accept opponent = "main" delay = "4.0">Согласен.</accept>
+				<refuse opponent = "main" delay = "4.0">Не дотягивает.</refuse>			
+				<refuse-succses opponent = "right" delay = "4.0">С вами не поспориш...</refuse-succses>
+				<refuse-failed opponent = "right" delay = "4.0">Вы с ума сошли?</refuse-failed>
+			</action>			
+		</skill>
+		<skill> <!-- skill 2-->
+			<dialog opponent = "right" delay = "4.0">Доказательство 2!</dialog>
+			<dialog opponent = "left" delay = "4.0">Невозможно!</dialog>	
+			<action>
+				<accept opponent = "main" delay = "4.0">Согласен.</accept>
+				<refuse opponent = "main" delay = "4.0">Не дотягивает.</refuse>			
+				<refuse-succses opponent = "right" delay = "4.0">С вами не поспориш...</refuse-succses>
+				<refuse-failed opponent = "right" delay = "4.0">Вы с ума сошли?</refuse-failed>
+			</action>			
+		</skill>
+		<skill> <!-- skill 3-->
+			<dialog opponent = "right" delay = "4.0">Доказательство 3!</dialog>
+			<dialog opponent = "left" delay = "4.0">Невозможно!</dialog>	
+			<action>
+				<accept opponent = "main" delay = "4.0">Согласен.</accept>
+				<refuse opponent = "main" delay = "4.0">Не дотягивает.</refuse>			
+				<refuse-succses opponent = "right" delay = "4.0">С вами не поспориш...</refuse-succses>
+				<refuse-failed opponent = "right" delay = "4.0">Вы с ума сошли?</refuse-failed>
+			</action>			
+		</skill>
+		<skill> <!-- skill 4-->
+			<dialog opponent = "right" delay = "4.0">Доказательство 4!</dialog>
+			<dialog opponent = "left"  delay = "4.0">Невозможно!</dialog>	
+			<action>
+				<accept opponent = "main" delay = "4.0">Согласен.</accept>
+				<refuse opponent = "main" delay = "4.0">Не дотягивает.</refuse>			
+				<refuse-succses opponent = "right" delay = "4.0">С вами не поспориш...</refuse-succses>
+				<refuse-failed opponent = "right" delay = "4.0">Вы с ума сошли?</refuse-failed>
+			</action>			
+		</skill>
+		<skill> <!-- skill 5-->
+			<dialog opponent = "right" delay = "4.0">Доказательство 5!</dialog>
+			<dialog opponent = "left"  delay = "4.0">Невозможно!</dialog>	
+			<action>
+				<accept opponent = "main" delay = "4.0">Согласен.</accept>
+				<refuse opponent = "main" delay = "4.0">Не дотягивает.</refuse>			
+				<refuse-succses opponent = "right" delay = "4.0">С вами не поспориш...</refuse-succses>
+				<refuse-failed opponent = "right" delay = "4.0">Вы с ума сошли?</refuse-failed>
+			</action>			
+		</skill>
+		<skill> <!-- skill 6-->
+			<dialog opponent = "right" delay = "4.0">Доказательство 6!</dialog>
+			<dialog opponent = "left"  delay = "4.0">Невозможно!</dialog>	
+			<action>
+				<accept opponent = "main" delay = "4.0">Согласен.</accept>
+				<refuse opponent = "main" delay = "4.0">Не дотягивает.</refuse>			
+				<refuse-succses opponent = "right" delay = "4.0">С вами не поспориш...</refuse-succses>
+				<refuse-failed opponent = "right" delay = "4.0">Вы с ума сошли?</refuse-failed>
+			</action>			
+		</skill>
+	</side>
 </root>

@@ -7,7 +7,7 @@ public class StartMenu : MenuElement
 {
     protected ResourcesSetting resources;
     [SerializeField]
-    protected UIClickListenerSimple startB, upgradeB, shopB,cheat, cheat2, cheat3;
+    protected UIClickListenerSimple startB, upgradeB, shopB,exitB,cheat, cheat2, cheat3;
     [SerializeField]
     protected StartMenuView view;
     [SerializeField]
@@ -29,6 +29,10 @@ public class StartMenu : MenuElement
     protected void ToGame(PointerEventData _eventData)
     {
         SceneLoader.Load(SceneLoader.DOCUMENT);
+    }
+    protected void ToExit(PointerEventData _eventData)
+    {
+        SceneLoader.Load(SceneLoader.MAIN_MENU);
     }
     protected void ToUpgrade(PointerEventData _eventData)
     {
@@ -59,6 +63,7 @@ public class StartMenu : MenuElement
         startB.AddHandler(ToGame);
         upgradeB.AddHandler(ToUpgrade);
         shopB.AddHandler(ToShop);
+        exitB.AddHandler(ToExit);
         cheat.AddHandler(Cheat);
         cheat2.AddHandler(Cheat2);
         cheat3.AddHandler(Cheat3);

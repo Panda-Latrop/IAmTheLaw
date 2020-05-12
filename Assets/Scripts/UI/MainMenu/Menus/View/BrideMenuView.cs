@@ -13,7 +13,7 @@ public class BrideMenuView : MonoBehaviour
     public void SetText(ScriptableCase _case, ResourcesSetting _resources)
     {
         string str = "";
-        XMLLoader.LoadBribe(_case.DocumentText, ref str, _case.Bribe.toJail, _resources.Heresy > 0 ?_resources.Heresy* 100 : 100);
+        XMLLoader.LoadBribe(_case.DocumentText, ref str, _case.Bribe.toJail, _resources.Heresy > 0 ?_resources.Heresy* 100 : Global.STANDARD_BRIBE);
         text.SetText(str);
     }
     public void HideBack()

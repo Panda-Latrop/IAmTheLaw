@@ -43,5 +43,30 @@ public class ResourcesSetting : Singleton<ResourcesSetting>
     public StuffInfo GetStuffInfo(int _id) => stuffInfos[_id];
     public void SetStuffInfo(int _id, StuffInfo _value) => stuffInfos[_id] = _value;
     public int StuffCount => stuffs.Count;
+
+    public void SetSave(SaveData _data)
+    {
+        money = _data.money;
+        loyalty = _data.loyalty;
+        heresy = _data.heresy;
+        stuffInfos.Clear();
+        for (int i = 0; i < _data.stuffInfos.Length; i++)
+        {
+            stuffInfos.Add(_data.stuffInfos[i]);
+        }
+    }
+    public SaveData GetSave()
+    {
+        SaveData data = new SaveData();
+        data.money = money;
+        data.loyalty = loyalty;
+        data.heresy = heresy;
+        data.stuffInfos = new StuffInfo[stuffInfos.Count];
+        for (int i = 0; i < stuffInfos.Count; i++)
+        {
+            data.stuffInfos[i] = stuffInfos[i];
+        }
+        return data;
+    }
 }
 

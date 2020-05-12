@@ -7,11 +7,11 @@ public class CourtMenu : MenuElement
 {
     protected GameSetting setting;
     [SerializeField]
-    protected UIClickListenerSimple accept0, refuse0, accept1, refuse1;
+    protected UIClickListenerSimple accept, refuse;
     [SerializeField]
     protected CourtMenuView view;
     [SerializeField]
-    protected CourtController courtController;
+    protected CourtControllerV2 courtController;
 
     public override void Show()
     {
@@ -27,15 +27,15 @@ public class CourtMenu : MenuElement
     }
     public void OnAccept(PointerEventData _eventData)
     {
-        courtController.PlayerTurn(true);
+        courtController.PlayerAccept();
     }
     public void OnRefuse(PointerEventData _eventData)
     {
-        courtController.PlayerTurn(false);
+        courtController.PlayerRefuse();
     }
-    public void ShowButton(Side _side)
+    public void ShowButton()
     {
-        view.Show(_side);
+        view.Show();
     }
     public void HideButton()
     {
@@ -44,9 +44,7 @@ public class CourtMenu : MenuElement
     public override void OnStart()
     {
         setting = GameSetting.Instance;
-        accept0.AddHandler(OnAccept);
-        refuse0.AddHandler(OnRefuse);
-        accept1.AddHandler(OnAccept);
-        refuse1.AddHandler(OnRefuse);
+        accept.AddHandler(OnAccept);
+        refuse.AddHandler(OnRefuse);
     }
 }

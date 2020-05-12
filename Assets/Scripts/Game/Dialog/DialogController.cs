@@ -4,11 +4,20 @@ using System.Xml;
 using UnityEngine;
 
 [System.Serializable]
-public class DialogBranch
+public class DialogRoot
 {
-    public int round;
-    public List<DialogNode> nodes;
-    public DialogNode stopNode;
+    public List<DialogSkills> sides;
+}
+[System.Serializable]
+public class DialogSkills
+{
+    public List<DialogSkill> skills;
+}
+[System.Serializable]
+public class DialogSkill
+{
+    public List<DialogNode> dialogs;
+    public List<DialogNode> actions;
 }
 [System.Serializable]
 public class DialogNode
@@ -18,62 +27,91 @@ public class DialogNode
     public int side;
 }
 
+public enum DialogState
+{
+    toDialog,
+    toAccept,
+    toRefuse,
+    toSuccses,
+    toFailed
+}
 
 public class DialogController : MonoBehaviour
 {
-    protected GameSetting setting;
     [SerializeField]
     protected DialogCloudView[] dialogViews;
-    protected List<DialogBranch> dialog;
-    protected int currentBranch = 0, currentNode = 0, opponent = 0;
+    protected DialogState state;
+    protected DialogRoot dialog;
+    protected int side = 0,skill = 0, node = 0, opponent = 0;
     protected float nextTime;
-    protected bool dialogEnd;
+    protected bool dialogEnd,wait;
 
-    protected void Start()
-    {
-
-        setting = GameSetting.Instance;
-        XMLLoader.LoadDialog(setting.Case.DialogText, ref dialog);
+    public void Load(GameSetting _setting)
+    {       
+        XMLLoader.LoadDialog(_setting.Case.DialogText, ref dialog);
         for (int i = 0; i < dialogViews.Length; i++)
             dialogViews[i].Hide(true);
         enabled = false;
     }
-    [ContextMenu("Start")]
-    public void SYAR()
+    public void StartDialog(DialogState _state, int _side, int _skill,bool _wait = false)
     {
-        StopDialog();
-        StartDialog(0);
-    }
-    public void StartDialog(int _id)
-    {
-        //enabled = true;
-        //currentBranch = _id;
-        //currentNode = 0;
-        //GetNextNode();
-        bool round = false;
-        for (int i = 0; i < dialog.Count; i++)
-        {
-           
-            if (dialog[i].round == _id)
-            {
-                currentBranch = i;
-                round = true;
-                break;
-            }
-            
-        }
-        Debug.Log("Call " + round);
-        if (!round)
-        {
-            return;
-        }
-         
-        enabled = true;
+        //Debug.Log(" " + _side + " " + _skill);
+        state = _state;
+        side = _side;
+        skill = _skill;
+        wait = _wait;
+        node = 0;
         GetNextNode();
+        if (!wait)
+            enabled = true;
     }
+    public void StartDialog(int _side,int _skill, bool _wait = false)
+    {
+        //Debug.Log(" " + _side + " " + _skill);
+        state = DialogState.toDialog; ;
+        side = _side;
+        skill = _skill;
+        wait = _wait;
+        node = 0;
+        GetNextNode();
+        if(!wait)
+        enabled = true;
+    }
+    protected void GetNode(DialogState _state,ref DialogNode _node, ref int _count)
+    {
+        switch (_state)
+        {
+            case DialogState.toDialog:
+                _node = dialog.sides[side].skills[skill].dialogs[node];
+                _count = dialog.sides[side].skills[skill].dialogs.Count;
+                break;
+            case DialogState.toAccept:
+                _node = dialog.sides[side].skills[skill].actions[0];
+                _count =-1;
+                break;
+            case DialogState.toRefuse:
+                _node = dialog.sides[side].skills[skill].actions[1];
+                _count = -1;
+                break;
+            case DialogState.toSuccses:
+                _node = dialog.sides[side].skills[skill].actions[2];
+                _count = -1;
+                break;
+            case DialogState.toFailed:
+                _node = dialog.sides[side].skills[skill].actions[3];
+                _count = -1;
+                break;
+            default:
+                break;
+        }
+    }
+
     public bool GetNextNode()
     {
-        DialogNode node = dialog[currentBranch].nodes[currentNode];
+
+        DialogNode node = null;
+        int count = 0;
+        GetNode(state,ref node, ref count);
         if (opponent != node.side)
         {
             dialogViews[opponent].Hide(true);
@@ -81,27 +119,42 @@ public class DialogController : MonoBehaviour
         }
         dialogViews[opponent].Hide(false);
         dialogViews[opponent].SetText(node.text);
-        currentNode++;
+        this.node++;
         nextTime = Time.time + node.delay;
-        return currentNode < dialog[currentBranch].nodes.Count;
+        return (this.node < count);
 
     }
     public void StopDialog()
     {
-        currentBranch = 0; currentNode = 0; opponent = 0;
+        side = skill = opponent = node = 0;
         for (int i = 0; i < dialogViews.Length; i++)
             dialogViews[i].Hide(true);
         dialogEnd = enabled = false;
     }
-    protected void Update()
-    {
-        if (Time.time >= nextTime)
-        {
-            if (dialogEnd)
-                StopDialog();
-            else
-                dialogEnd = !GetNextNode();
-        }
-
-    }
+    //protected void Update()
+    //{
+    //    if (Time.time >= nextTime)
+    //    {
+    //        if (dialogEnd && !wait)
+    //            StopDialog();
+    //        else
+    //            dialogEnd = !GetNextNode();
+    //        //switch (state)
+    //        //{
+    //        //    case DialogState.toDialog:
+    //        //        break;
+    //        //    case DialogState.toAccept:
+    //        //        break;
+    //        //    case DialogState.toRefuse:
+    //        //        break;
+    //        //    case DialogState.toSuccses:
+    //        //        break;
+    //        //    case DialogState.toFailed:
+    //        //        break;
+    //        //    default:
+    //        //        break;
+    //        //}
+          
+    //    }
+    //}
 }

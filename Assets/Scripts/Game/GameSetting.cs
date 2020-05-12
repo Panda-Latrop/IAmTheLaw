@@ -5,25 +5,22 @@ using UnityEngine;
 [System.Serializable]
 public class GameCaseStruct
 {
-   /* [SerializeField]
-    protected ScriptableCase gameCase;*/
+
     [SerializeField]
     protected bool bribeAccepted, toJail;
+    [SerializeField]
+    protected int failLoyalty, failHeresy;
 
     public GameCaseStruct()
-    {
-        // gameCase = _gameCase;
+    {      
         bribeAccepted = toJail = false;
+        failLoyalty = failHeresy = 0;
     }
-    /*public GameCaseStruct(ScriptableCase _gameCase)
-    {
-       // gameCase = _gameCase;
-        bribeAccepted = toJail = false;
-    }*/
-
-    // public ScriptableCase Case => gameCase;
+   
     public bool BribeAccept { get => bribeAccepted; set => bribeAccepted = value; }
     public bool ToJail { get => toJail; set => toJail = value; }
+    public int FailLoyalty { get => failLoyalty; set => failLoyalty = value; }
+    public int FailHeresy { get => failHeresy; set => failHeresy = value; }
 }
 
 public class GameSetting : Singleton<GameSetting>
@@ -44,6 +41,7 @@ public class GameSetting : Singleton<GameSetting>
         }
     }
     public ScriptableCase Case => day.GetCase(currentCase);
+    public GameCaseStruct GameCase => cases[currentCase];
     public GameCaseStruct GetGameCase(int _id) => cases[_id];
     public ScriptableDay Day => day;
     public bool BribeAccept { get => cases[currentCase].BribeAccept; set => cases[currentCase].BribeAccept = value; }

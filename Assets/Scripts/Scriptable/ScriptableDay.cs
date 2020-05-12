@@ -7,10 +7,11 @@ using UnityEngine;
 public class ScriptableDay : ScriptableObject
 {
     [SerializeField]
-    protected TextAsset newspaperText;
+    protected TextAsset lawbook,newspaperText;
     [SerializeField]
     protected ScriptableCase[] cases;
 
+    public TextAsset LawbookText => lawbook;
     public TextAsset NewspaperText => newspaperText;
     public ScriptableCase GetCase(int _id) => cases[_id];
     public int CaseCount => cases.Length;
